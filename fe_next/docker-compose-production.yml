@@ -1,0 +1,23 @@
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  fe_next_app:
+    container_name: elearning_support_fe_next
+    image: leopepe2012/elearning_support_system:fe-next
+    restart: always
+    privileged: true
+    user: root
+    environment:
+      - "NODE_ENV=production"
+      - "TZ=Asia/Ho_Chi_Minh"
+    networks:
+      - e_learning_support
+#    volumes:
+#      - /usr/local:/usr/local
+#    ports:
+#      - "3002:3000"
+    expose:
+      - 3000

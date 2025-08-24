@@ -1,0 +1,95 @@
+.app-button {
+  border-radius: 8px !important;
+}
+
+.app-button.large {
+  height: 40px !important;
+}
+
+.app-button.middle {
+  height: 32px !important;
+}
+
+.app-button.small {
+  height: 24px !important;
+}
+.ant-btn-variant-outlined {
+  // border-color: var(--hust-color) !important;
+  color: var(--hust-color) !important;
+}
+.ant-btn-variant-dashed {
+  border-color: var(--hust-color) !important;
+  color: var(--hust-color) !important;
+}
+.ant-btn-variant-solid:not(.ant-btn-disabled) {
+  background: linear-gradient(90deg, var(--primary-red) 0%, var(--primary-red-light) 100%) !important;
+}
+.ant-btn-variant-solid:disabled {
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+// // .app-button.default {
+// //   color: var(--color-text-white) !important;
+// //   border: 1px solid var(--color-primary-default) !important;
+// //   background-color: var(--color-primary-default) !important;
+// // }
+// // .ant-btn-variant-solid.ant-btn-disabled,
+// // .ant-btn-variant-solid:disabled {
+// // background: #c77979 !important;
+// //   border: none !important;
+// // }
+// // .ant-btn-variant-solid.ant-btn-disabled:hover,
+// // .ant-btn-variant-solid:disabled:hover {
+// //   border: none !important;
+// // }
+
+// .app-button.default {
+//   color: #fff !important;
+//   background-color: var(--hust-color);
+//   outline: none !important;
+//   border: 1px solid rgba(205, 254, 108, 0.2);
+//   border-radius: 12px !important;
+// }
+
+// .app-button.default:hover {
+//   background-color: #c77979;
+//   transition: all 0.3s ease-in-out;
+// }
+
+// .app-button.outline {
+//   color: var(--hust-color) !important;
+//   outline: none !important;
+//   border-radius: 12px !important;
+//   border: 1px solid var(--hust-color) !important;
+//   background: rgba(255, 255, 255, 0.06);
+//   box-shadow: 0px -2px 0px 0px rgba(255, 255, 255, 0.2) inset !important;
+// }
+
+// .app-button.outline:hover {
+//   background-color: #fff6f6 !important;
+//   transition: all 0.3s ease-in-out;
+// }
+
+// .app-button.primary {
+//   color: var(--black-color) !important;
+//   background-color: var(--color-neon);
+//   outline: none !important;
+//   border-radius: 12px !important;
+//   border: none !important;
+// }
+
+// .app-button.outline-primary {
+//   color: var(--color-primary-default) !important;
+//   border: 1px solid var(--color-primary-default) !important;
+//   background-color: transparent;
+//   border-radius: 12px !important;
+
+//   outline: none !important;
+// }
+
+// .app-button.outline-secondary {
+//   border-radius: 12px !important;
+//   color: var(--color-text-white) !important;
+//   border: 1px solid var(--color-text-white) !important;
+//   background-color: transparent;
+//   outline: none !important;
+// }

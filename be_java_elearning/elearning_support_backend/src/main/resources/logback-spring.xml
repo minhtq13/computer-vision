@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <property name="LOGS" value="./logs" />
+  <property name="ARCHIVED_LOGS" value="./logs/archived"/>
+
+  <!-- custom logging level tag highlight -->
+  <conversionRule conversionWord="highlightTagLevel" converterClass="com.elearning.elearning_support.configurations.logging.CustomerLoggingLevelHighlight" />
+  <conversionRule conversionWord="threadId" converterClass="com.elearning.elearning_support.configurations.logging.ThreadIdConverter" />
+
+  <timestamp key="logDate" datePattern="yyyy-MM-dd"/>
+
+  <appender name="CONSOLE"
+    class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>
+        %d{dd-MM-yyyy HH:mm:ss.SSS} Level:%highlightTagLevel([%level]) Thread:%green([%thread]) [%threadId] Source:%cyan([%logger{0} at %C:%L]) %msg %n
+      </Pattern>
+    </layout>
+  </appender>
+
+  <appender name="RECENT_LOGS_ROLLING"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <encoder
+      class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d %p %C{64} [%t] - %m %n</Pattern>
+    </encoder>
+
+    <rollingPolicy
+      class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOGS}/els-backend-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <maxHistory>7</maxHistory>
+      <totalSizeCap>512MB</totalSizeCap>
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <!-- rollover daily and when the file reaches 16 MegaBytes -->
+        <maxFileSize>16MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+  </appender>
+
+  <appender name="ARCHIVED_LOGS_ROLLING"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <encoder
+      class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d %p %C{64} [%t] - %m %n</Pattern>
+    </encoder>
+
+    <rollingPolicy
+      class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${ARCHIVED_LOGS}/els-backend-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+      <!-- Keep archived logs in 90 days -->
+      <maxHistory>90</maxHistory>
+      <totalSizeCap>4GB</totalSizeCap>
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <!-- rollover daily and when the file reaches 128 MegaBytes -->
+        <maxFileSize>128MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+  </appender>
+
+<!--LOG everything at INFO level-->
+  <root level="info">
+    <appender-ref ref="RECENT_LOGS_ROLLING" />
+    <appender-ref ref="ARCHIVED_LOGS_ROLLING" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+  <!-- LOG "org.apache.kafka.clients" at ERROR level -->
+  <logger name="org.apache.kafka.clients" level="error">
+    <appender-ref ref="RECENT_LOGS_ROLLING" />
+    <appender-ref ref="ARCHIVED_LOGS_ROLLING" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+</configuration>

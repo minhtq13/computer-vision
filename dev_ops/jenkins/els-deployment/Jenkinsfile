@@ -1,0 +1,135 @@
+// SSH authentication info
+def server=[:]
+server.name = ''
+server.host = ''
+server.user = ''
+server.password = ''
+server.allowAnyHosts = true
+// git info
+def gitEnv = [:]
+gitEnv.targetBranch = ''
+gitEnv.repo = ''
+gitEnv.credentialId = ''
+// build authentication info
+def buildEnv=[:]
+buildEnv.sourceDir=''
+buildEnv.targetImage = ''
+buildEnv.dockerRegistryCredenticalId = ''
+// deploy info
+def deployEnv= [:]
+deployEnv.targetImage = ''
+deployEnv.containerName = ''
+deployEnv.composeDir = ''
+deployEnv.sleepForRunSeconds = 30
+// telegram bot
+def telegramMpecJenkinsBotToken = ''
+def telegramGroupChatId = ''
+// git info
+def gitInfo = [:]
+
+// pipeline stages
+pipeline {
+    agent any
+    stages {
+        // build stages
+        stage('Pull source changes') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: "${gitEnv.targetBranch}", credentialsId: "${gitEnv.credentialId}", url: "${gitEnv.repo}"
+                script {
+                     gitInfo.currentTag = sh(script: 'git describe --tags --exact-match HEAD 2>/dev/null || echo "no-tag"', returnStdout: true).trim()
+                     gitInfo.latestTag = sh(script: 'git describe --tags --abbrev=0 2>/dev/null || echo "no-tag"', returnStdout: true).trim()
+                }
+            }
+        }
+        stage('Build Docker image') {
+            steps {
+                dir("${buildEnv.sourceDir}") {
+                    script{
+                        sh "docker rmi -f ${buildEnv.targetImage} || true"
+                        sh "docker build --platform=linux/amd64 -f ./Dockerfile --tag=${buildEnv.targetImage} ."
+                    }
+                }
+            }
+        }
+        stage('Push built image to DockerHub') {
+            steps {
+                withDockerRegistry(credentialsId: "${buildEnv.dockerRegistryCredenticalId}", url: 'https://index.docker.io/v1/') {
+                    script {
+                        sh "docker push ${buildEnv.targetImage}"
+                    }
+                }
+            }
+        }
+        // Deployment stage
+        stage ('SSH to the target server and run the container') {
+            steps {
+                // Pull new image and run container and print out start-up logs
+                sshCommand(remote: server, command: "docker compose -f ${deployEnv.composeDir} up -d --force-recreate --pull always")
+                sshCommand(remote: server, command: "docker logs ${deployEnv.containerName} --tail 500")
+            }
+        }
+        // Health check stage
+        stage('Health Check') {
+            steps {
+                script {
+                    echo "Sleep ${deployEnv.sleepForRunSeconds}s to wait for container starting"
+                    sleep(deployEnv.sleepForRunSeconds)
+                    def containerStatus = sshCommand(
+                        remote: server, 
+                        command: "docker inspect -f '{{.State.Status}}' ${deployEnv.containerName}",
+                        returnStdout: true
+                    ).trim()
+                    
+                    if (containerStatus == 'running') {
+                        echo "✅ Container ${deployEnv.containerName} is running"
+                        echo "Deployment successful!"
+                    } else {
+                        error "❌ Container deployment failed. Status: ${containerStatus}"
+                    }
+                }
+            }
+        }
+    }
+    post {
+        // Always post actions
+        always {
+            script{
+                sh "docker rmi -f ${buildEnv.targetImage} || true"
+                // Clean up built cache
+                sh "docker builder prune -f --filter 'label=image=${buildEnv.targetImage}' || true"
+                echo "Cleanup completed for ${buildEnv.targetImage}"
+            }
+        }
+        // Success post actions
+        success {
+            script {
+                sh """
+                curl -s -X POST "https://api.telegram.org/bot${telegramMpecJenkinsBotToken}/sendMessage" \
+                    -d chat_id="${telegramGroupChatId}" \
+                    -d text="✅ Build and Deploy successfully!
+                🏷️ Tag: ${gitInfo.latestTag}
+                📋 Job: ${JOB_NAME}
+                🔢 Build: #${BUILD_NUMBER}
+                🚀 Container: ${deployEnv.containerName}
+                📅 Time: \$(date)"
+                """
+            }
+        }
+        // Failure post actions
+        failure {
+           script {
+                sh """
+                curl -s -X POST "https://api.telegram.org/bot${telegramMpecJenkinsBotToken}/sendMessage" \
+                    -d chat_id="${telegramGroupChatId}" \
+                    -d text="❌ Build and Deploy failure!
+                🏷️ Tag: ${gitInfo.latestTag}
+                📋 Job: ${JOB_NAME}
+                🔢 Build: #${BUILD_NUMBER}
+                💥 Container: ${deployEnv.containerName}
+                📅 Time: \$(date)"
+                """
+           }
+        }
+    }
+}

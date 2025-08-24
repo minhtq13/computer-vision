@@ -1,0 +1,81 @@
+server:
+  port: 8090
+  mode: local
+  allowedOrigins:
+    - http://localhost:3000
+databases:
+  postgres:
+    master:
+      user: elearning_support_admin
+      password: els@admin
+      host: localhost
+      port: 5432
+      database: elearning_support_db
+      schema: elearning_support_dev
+      maxIdleConnections: 10
+      maxOpenConnections: 100
+      connectionMaxLifetimeMs: 3600000
+      sslRequired: false
+      timeZone: Asia/Ho_Chi_Minh
+    slave:
+      user: elearning_support_admin
+      password: els@admin
+      host: localhost
+      port: 5432
+      database: elearning_support_db
+      schema: elearning_support_dev
+      maxIdleConnections: 10
+      maxOpenConnections: 100
+      connectionMaxLifetimeMs: 3600000
+      sslRequired: false
+      timeZone: Asia/Ho_Chi_Minh
+  mongodb:
+    host: localhost
+    port: 27017
+    username: elearning_support_admin
+    database: elearning_support_db
+    password: els@admin
+    authenticationDatabase: elearning_support_db
+redis:
+  host: localhost
+  port: 6381
+  username: default
+  password: els@redis
+  db: 0
+  connectionTimeoutMs: 30000
+  poolSize: 10
+kafka:
+  brokers:
+    - localhost:29092
+    - localhost:39092
+  consumer:
+    groupId: els_consumer_grp_1
+    autoOffsetReset: earliest
+    minBytes:  1024 #1KB
+    maxBytes:  10485760 # 10MB
+    maxWaitInSecond: 10
+    groupInstanceId: backend_go_app_consumer
+  producer:
+    retries: 3 # retry 3 times
+    batchSize: 100
+    defaultTopic: TopicELearningSupportSystem
+    clientId: backend_go_app
+  options:
+    enabled: true
+jwt:
+  secretKey: ELEARNINGKsu295JdkjKHJJHW2349gfbnaf23cheh34HIMAde24
+  accessTokenExpiredMs: 100000000
+  refreshTokenExpiredMs: 100000000000
+  signatureAlgorithm: HS256
+logging:
+  level: debug
+  fileName: ./logs/app-gogin-log.log
+  maxSizeMBs: 500
+  maxBackups: 3
+  maxAgeDays: 14
+  compress: true
+firebase:
+  projectId: elearningsupportsystem-55777
+  appName: e-learning_support_system
+  keyFile: elearningsupportsystem-55777-firebase-adminsdk-8oqd8-6bb7d37704.json
+

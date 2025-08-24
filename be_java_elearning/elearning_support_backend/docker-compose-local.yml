@@ -1,0 +1,36 @@
+# docker compose -f docker-compose-local.yml up
+# docker compose -f .\docker-compose-local.yml up -d (detached mode)
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+services:
+  backend_app:
+    container_name: elearning_support_backend_java
+    image: leopepe2012/elearning_support_system:java-backend
+    restart: always
+    volumes:
+      - app_data:/root
+      - app_resources:/usr/local/app/appResources/upload
+      - els_backend_logs:/usr/local/app/logs
+    env_file:
+      - .env.dev
+    environment:
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE:-dev}
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - e_learning_support
+    ports:
+      - "8088:8088" # local
+    expose:
+      - 8088
+volumes:
+  app_data:
+    name: els_app_shared_data
+    driver: local
+  app_resources:
+    name: els_app_resources
+    driver: local
+  els_backend_logs:
+    name: els_backend_logs
+    driver: local

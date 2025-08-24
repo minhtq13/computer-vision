@@ -1,0 +1,39 @@
+scalar Long
+scalar Date
+scalar DateTime
+scalar Object
+
+# define directive
+directive @inherits(type: String!) on OBJECT | INPUT_OBJECT
+
+type CommonResponse {
+    status: Int!,
+    message: String!
+    timestamp: Long!,
+    error: Object
+}
+
+# Define page structure
+type Sort {
+    empty: Boolean!,
+    sorted: Boolean,
+    unsorted: Boolean
+}
+type Pageable {
+    offset: Int!,
+    pageNumber: Int!,
+    pageSize: Int!,
+    sort: Sort!,
+    paged: Boolean!,
+    unpaged: Boolean!,
+}
+type PageInfo {
+    pageable: Pageable!,
+    empty: Boolean!,
+    first: Boolean!,
+    last: Boolean!,
+    number: Int!,
+    numberOfElements: Int!,
+    totalPages: Int!,
+    totalElements: Long!
+}

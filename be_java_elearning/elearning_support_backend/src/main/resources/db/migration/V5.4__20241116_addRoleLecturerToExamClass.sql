@@ -1,0 +1,1 @@
+comment on column "elearning_support_dev"."user_exam_class"."role_type" is 'Vai trò của người dùng trong lớp thi (0: Thí sinh/SV, 1: Giám thị, 2: Giảng viên giảng dạy)';

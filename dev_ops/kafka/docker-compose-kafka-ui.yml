@@ -1,0 +1,21 @@
+version: '3.8'
+
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  kafka_ui:
+    container_name: kafka_ui
+    image: provectuslabs/kafka-ui:latest
+    user: root
+    restart: always
+    ports:
+      - 8092:8080
+    environment:
+      - DYNAMIC_CONFIG_ENABLED=true
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - e_learning_support
+    volumes:
+      - ./kafka-ui-config.yml:/etc/kafkaui/dynamic_config.yaml

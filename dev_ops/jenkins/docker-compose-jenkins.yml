@@ -1,0 +1,50 @@
+version: '3.8'
+
+networks:
+  jenkins-network:
+    driver: bridge
+
+volumes:
+  jenkins_home:
+    name: jenkins_home
+    driver: local
+
+services:
+  docker-dnd:
+    image: docker:dind
+    container_name: docker-dnd
+    user: root
+    privileged: true
+    restart: always
+    ports:
+      - 2378:2375
+    expose:
+      - 2375
+    environment:
+      - DOCKER_TLS_CERTDIR=
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      # - jenkins_home:/var/jenkins_home
+      - ./jenkins_home:/var/jenkins_home
+    networks:
+      - jenkins-network
+  jenkins:
+    image: leopepe2012/jenkins
+    container_name: jenkins
+    user: root
+    privileged: true
+    restart: always
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      # - jenkins_home:/var/jenkins_home
+      - ./jenkins_home:/var/jenkins_home
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins" # prefix url path = /jenkins
+      - DOCKER_HOST=tcp://docker-dnd:2375 # docker agent
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - jenkins-network
+    depends_on:
+      - docker-dnd

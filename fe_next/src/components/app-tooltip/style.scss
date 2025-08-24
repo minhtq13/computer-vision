@@ -1,0 +1,10 @@
+.app-tooltip {
+  .ant-tooltip-arrow {
+    color: var(--color-container-disabled) !important;
+    --antd-arrow-background-color: var(--color-container-disabled) !important;
+  }
+  .ant-tooltip-inner {
+    color: var(--color-text-primary-2) !important;
+    background-color: var(--color-container-disabled) !important;
+  }
+}

@@ -1,0 +1,32 @@
+# docker compose -f docker-compose-local.yml up
+# docker compose -f .\docker-compose-local.yml up -d (detached mode)
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  ai_app:
+    container_name: elearning_support_ai
+    image: leopepe2012/elearning_support_system:ai-module-new
+    volumes:
+      - app_data:/root
+    networks:
+      - e_learning_support
+    environment:
+      - "RUN_ENV=local"
+      - "SERVER_PORT=8089"
+      - "SERVER_API_KEY=apikeyels2019271820232"
+    ports:
+      - "8089:8089"
+    expose:
+      - 8089   
+volumes:
+  app_data:
+    name: els_app_shared_data
+    # driver: local
+    external: true
+  app_resources:
+    name: els_app_resources
+    # driver: local
+    external: true

@@ -1,0 +1,9 @@
+FROM ultralytics/ultralytics:8.3.57-cpu
+ARG WORK_DIR=/usr/local/app
+COPY requirements.txt ${WORK_DIR}/requirements.txt
+WORKDIR /usr/local/app
+RUN rm -rf *.yml
+RUN apt update && apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2.0-0
+RUN rm -rf /var/lib/apt/lists/*
+RUN pip3 install -r requirements.txt
+CMD ["echo", "Built AI Python base image sucessfully!"]

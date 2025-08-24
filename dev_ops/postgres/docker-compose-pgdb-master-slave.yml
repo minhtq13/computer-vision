@@ -1,0 +1,62 @@
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+# MASTER
+  els_postgres_master:
+    container_name: els_postgres_master
+    restart: always
+    image: bitnami/postgresql:14
+    networks:
+      - e_learning_support
+    ports:
+      - "5465:5432"
+    expose:
+      - 5432
+    volumes:
+      - els_master_data:/bitnami/postgresql
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=master
+      - POSTGRESQL_PGAUDIT_LOG=READ,WRITE
+      - POSTGRESQL_LOG_HOSTNAME=true
+      - POSTGRESQL_USERNAME=elearning_support_admin
+      - POSTGRESQL_PASSWORD=els@admin
+      - POSTGRESQL_DATABASE=elearning_support_db
+      - POSTGRESQL_REPLICATION_USER=els_rep_user
+      - POSTGRESQL_REPLICATION_PASSWORD=els@replica
+      - POSTGRESQL_WAL_LEVEL=replica
+      - TZ=Asia/Ho_Chi_Minh
+# SLAVE
+  els_postgres_slave:
+    container_name: els_postgres_slave
+    restart: always
+    image: bitnami/postgresql:14
+    depends_on:
+      - els_postgres_master
+    networks:
+      - e_learning_support
+    ports:
+      - "5435:5432"
+    expose:
+      - 5432
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=slave
+      - POSTGRESQL_PASSWORD=els@admin
+      - POSTGRESQL_MASTER_HOST=els_postgres_master
+      - POSTGRESQL_PGAUDIT_LOG=READ
+      - POSTGRESQL_LOG_HOSTNAME=true
+      - POSTGRESQL_REPLICATION_USER=els_rep_user
+      - POSTGRESQL_REPLICATION_PASSWORD=els@replica
+      - POSTGRESQL_MASTER_PORT_NUMBER=5432
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - els_slave_data:/bitnami/postgresql
+volumes:
+  els_master_data:
+    name: els_master_data
+    driver: local
+  els_slave_data:
+    name: els_slave_data
+    driver: local

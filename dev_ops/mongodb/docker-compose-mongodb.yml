@@ -1,0 +1,29 @@
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  els_mongo_db:
+    image: bitnami/mongodb:8.0.1
+    container_name: els_mongo_db
+    restart: always
+    networks:
+      - e_learning_support
+    ports:
+      - "27017:27017"
+    expose:
+      - 27017
+    environment:
+      - MONGODB_ROOT_USER=root
+      - MONGODB_ROOT_PASSWORD=root
+      - MONGODB_USERNAME=elearning_support_admin
+      - MONGODB_PASSWORD=els@admin
+      - MONGODB_DATABASE=elearning_support_db
+      - MONGODB_ENABLE_IPV6=yes
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - els_mongo_db:/bitnami/mongodb
+volumes:
+  els_mongo_db:
+    name: els_mongo_db
+    driver: local

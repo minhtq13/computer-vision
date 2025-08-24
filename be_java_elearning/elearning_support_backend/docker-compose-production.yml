@@ -1,0 +1,34 @@
+# docker compose -f .\docker-compose-production.yml up -d (detached mode)
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  backend_app:
+    container_name: elearning_support_backend_java
+    image: leopepe2012/elearning_support_system:java-backend
+    restart: always
+    volumes:
+      - app_data:/root
+      - app_resources:/usr/local/app/appResources/upload
+      - els_backend_logs:/usr/local/app/logs
+    env_file:
+      - .env.prod
+    environment:
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE:-production}
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - e_learning_support
+    expose:
+      - 8088
+volumes:
+  app_data:
+    name: els_app_shared_data
+    driver: local
+  app_resources:
+    name: els_app_resources
+    driver: local
+  els_backend_logs:
+    name: els_backend_logs
+    driver: local

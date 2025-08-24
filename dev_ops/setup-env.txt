@@ -1,0 +1,15 @@
+-- Setup docker env for dev --
+-- Create a network --
+> docker network create -d bridge elearning_support_network
+
+-- Run Redis container --
+> docker compose -f ./docker-compose-files/docker-compose-redis.yml up -d
+
+-- Run MongoDB container --
+> docker compose -f ./docker-compose-files/docker-compose-mongodb.yml up -d
+
+-- Run PostgreSQL Master/Slave container --
+> docker compose -f ./docker-compose-files/docker-compose-pgdb-master-slave.yml up - d
+
+-- Run Kafka (2 zookeepers - 2 brokers) container --
+> docker compose -f ./docker-compose-files/docker-compose-kafka.yml up -d

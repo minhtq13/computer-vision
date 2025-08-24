@@ -1,0 +1,14 @@
+auth:
+  type: DISABLED
+kafka:
+  clusters:
+  - bootstrapServers: els_kafka_s1:9092,els_kafka_s2:9092
+    metrics:
+      port: 9977
+      type: JMX
+    name: local cluster
+    properties: {}
+    readOnly: false
+rbac:
+  roles: []
+webclient: {}

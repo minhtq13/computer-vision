@@ -1,0 +1,7 @@
+# -1: Không yêu cầu token, 0: Yêu cầu token (tất cả mọi role), 1:SUPER_ADMIN, 2:TEACHER, 3: STUDENT
+apis:
+  - /api/auth/login|-1
+  - /api/auth/token/refresh|-1
+  - /api/auth/logout|0
+  - /api/user/profile|0
+  - /api/messaging/kafka/send|0

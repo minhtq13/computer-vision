@@ -1,0 +1,2 @@
+alter table "elearning_support_dev"."auth_info" add column if not exists "token_issued_at" timestamp;
+comment on column "elearning_support_dev"."auth_info"."token_issued_at" is 'Thời gian token được cấp lần cuối';

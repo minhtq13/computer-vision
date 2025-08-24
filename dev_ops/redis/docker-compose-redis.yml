@@ -1,0 +1,28 @@
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  redis_db:
+    container_name: els_redis_db
+    image: redis:6.2
+    restart: always
+    environment:
+      - REDIS_PASSWORD=els@redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - e_learning_support
+    volumes:
+      - els_redis_db:/data
+    ports:
+      - "6381:6379"
+    expose:
+      - 6379
+    command: sh -c "redis-server --save 60 1 --loglevel verbose --requirepass els@redis"
+volumes:
+  els_redis_db:
+    name: els_redis_db
+    driver: local

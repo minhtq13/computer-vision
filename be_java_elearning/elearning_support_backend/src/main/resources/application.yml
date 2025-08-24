@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+# Cấu hình white list cho api
+routes:
+  # -1: Không yêu cầu token, 0: Yêu cầu token (tất cả mọi role), 1:SUPER_ADMIN, 2:TEACHER, 3: STUDENT
+  apis:
+    - /api/auth/**|-1
+    - /api/user/profile|0
+  public-resources:
+    - /resources/upload/files/**
+    - /resources/excelTemplate/**
+    - /resources/wordTemplate/**
+    - /swagger-ui/**
+    - /v3/api-docs/**
+    - /public/shared/**
+

@@ -1,0 +1,157 @@
+version: "3.8"
+networks:
+  e_learning_support:
+    name: elearning_support_network
+volumes:
+  # Redis
+  els_redis_db:
+    name: els_redis_db
+    driver: local
+  # MongoDB
+  els_mongo_db:
+    name: els_mongo_db
+    driver: local  
+  # Kafka
+  els_kafka_zk_data_1:
+    name: els_kafka_zk_data_1
+    driver: local
+  els_kafka_zk_data_2:
+    name: els_kafka_zk_data_2
+    driver: local
+  els_kafka_broker_data_1:
+    name: els_kafka_broker_data_1
+    driver: local
+  els_kafka_broker_data_2:
+    name: els_kafka_broker_data_2
+    driver: local
+services:
+  # Redis
+  redis_db:
+    container_name: els_redis_db
+    image: redis:6.2
+    restart: always
+    environment:
+      - REDIS_PASSWORD=els@redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - e_learning_support
+    volumes:
+      - els_redis_db:/data
+    ports:
+      - "6381:6379"
+    expose:
+      - 6379
+    command: sh -c "redis-server --save 60 1 --loglevel verbose --requirepass els@redis"
+
+  # MongoDB
+  els_mongo_db:
+    image: bitnami/mongodb:8.0.1
+    container_name: els_mongo_db
+    restart: always
+    networks:
+      - e_learning_support
+    ports:
+      - "27017:27017"
+    expose:
+      - 27017
+    environment:
+      - MONGODB_ROOT_USER=root
+      - MONGODB_ROOT_PASSWORD=root
+      - MONGODB_USERNAME=elearning_support_admin
+      - MONGODB_PASSWORD=els@admin
+      - MONGODB_DATABASE=elearning_support_db
+      - MONGODB_ENABLE_IPV6=yes
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - els_mongo_db:/bitnami/mongodb
+
+  # Kafka
+  els_kafka_zookeeper_s1:
+    image: confluentinc/cp-zookeeper:7.6.1
+    container_name: els_kafka_zookeeper_s1
+    restart: always
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      # Explicitly disable SASL for Zookeeper
+      ZOOKEEPER_SASL_ENABLED: "false"
+    networks:
+      - e_learning_support
+    ports:
+      - "22181:2181"
+    volumes:
+      - els_kafka_zk_data_1:/var/lib/zookeeper
+    expose:
+      - 2181
+
+  els_kafka_zookeeper_s2:
+    image: confluentinc/cp-zookeeper:7.6.1
+    container_name: els_kafka_zookeeper_s2
+    restart: always
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      # Explicitly disable SASL for Zookeeper
+      ZOOKEEPER_SASL_ENABLED: "false"
+    networks:
+      - e_learning_support
+    ports:
+      - "32181:2181"
+    volumes:
+      - els_kafka_zk_data_2:/var/lib/zookeeper
+    expose:
+      - 2181
+
+  els_kafka_s1:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: els_kafka_s1
+    restart: always
+    depends_on:
+      - els_kafka_zookeeper_s1
+      - els_kafka_zookeeper_s2
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true" 
+      KAFKA_ZOOKEEPER_CONNECT: els_kafka_zookeeper_s1:2181,els_kafka_zookeeper_s2:2181
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://els_kafka_s1:9092,EXTERNAL://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2
+      KAFKA_OFFSETS_RETENTION_HOURS: 24
+    networks:
+      - e_learning_support
+    ports:
+      - "29092:29092"
+    volumes:
+      - els_kafka_broker_data_1:/var/lib/kafka
+    expose:
+      - 29092
+      - 9092
+
+  els_kafka_s2:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: els_kafka_s2
+    restart: always
+    depends_on:
+      - els_kafka_zookeeper_s1
+      - els_kafka_zookeeper_s2
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true" 
+      KAFKA_ZOOKEEPER_CONNECT: els_kafka_zookeeper_s1:2181,els_kafka_zookeeper_s2:2181
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://els_kafka_s2:9092,EXTERNAL://localhost:39092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2
+      KAFKA_OFFSETS_RETENTION_HOURS: 24
+    networks:
+      - e_learning_support
+    ports:
+      - "39092:39092"
+    volumes:
+      - els_kafka_broker_data_2:/var/lib/kafka
+    expose:
+      - 39092
+      - 9092

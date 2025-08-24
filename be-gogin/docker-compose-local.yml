@@ -1,0 +1,31 @@
+version: "3.7"
+networks:
+  e_learning_support:
+    name: elearning_support_network
+services:
+  backend_go_app:
+    container_name: elearning_support_backend_go
+    image: leopepe2012/elearning_support_system:go-backend
+    restart: always
+    volumes:
+      - app_data:/root
+      - app_logs:/app/logs
+    env_file:
+      - .env.local
+    environment:
+      - ENV_MODE=development
+      - GIN_MODE=${GIN_MODE:-debug}
+      - TZ=Asia/Ho_Chi_Minh
+    networks:
+      - e_learning_support
+    ports:
+      - "8090:8090"
+    expose:
+      - 8090
+volumes:
+  app_data:
+    name: els_app_shared_data
+    driver: local
+  app_logs:
+    name: els_backend_go_logs
+    driver: local

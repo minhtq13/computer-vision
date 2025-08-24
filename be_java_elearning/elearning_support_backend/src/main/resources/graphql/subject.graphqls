@@ -1,0 +1,49 @@
+type SubjectListDTO {
+    id: Long!,
+    title: String!,
+    code: String!,
+    credit: Int!,
+    departmentName: String
+    modifiedAt: String
+}
+
+type SubjectPageDTO {
+    content: [SubjectListDTO!]
+    # PageInfo
+    pageable: Pageable!,
+    empty: Boolean!,
+    first: Boolean!,
+    last: Boolean!,
+    number: Int!,
+    numberOfElements: Int!,
+    totalPages: Int!,
+    totalElements: Long!
+}
+
+# Chapter info
+type ChapterBaseResDTO {
+    id: Long!,
+    code: String!,
+    title: String!,
+    orders: Int!
+}
+type SubjectDetailDTO {
+    id: Long!,
+    title: String!,
+    code: String!,
+    credit: Int!,
+    description: String,
+    departmentId: Long
+    departmentName: String
+    modifiedAt: String
+    chapters: [ChapterBaseResDTO!]
+}
+
+type Query {
+    # getListSubject API
+    subjectList(
+        search: String = "", departmentId: Long = -1, departmentName: String = "", page: Int = 0, size: Int = 10, sort: String = "modifiedAt,desc")
+    : SubjectPageDTO,
+    # getDetailSubject API
+    subjectDetail(subjectId: Long!) : SubjectDetailDTO
+}
