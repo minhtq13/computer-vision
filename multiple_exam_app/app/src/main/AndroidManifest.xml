@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MultipleChoiceExam"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Teacher.ExamManagement.subject.SubjectUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.questionexam.QuestionExamOfflineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.imagescoring.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.question.QuestionUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.savedbscoring.StudentSaveScoringDBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamClassManagement.classExam.examclass.ExamClassUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.imagescoring.PreviewScoringActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamClassManagement.studentTest.StudentTestDetailExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamClassManagement.classExam.examclass.StudentTestClassExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamClassManagement.classExam.examclass.ExamClassAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ProfileUser.student.StudentProfileUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ProfileUser.teacher.TeacherProfileUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.teacher.TeacherProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.teacher.TeacherUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.student.StudentUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.teacher.TeacherAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.teacher.TeacherSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.student.StudentAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.student.StudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.student.StudentProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.question.QuestionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.question.QuestionAddItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.question.QuestionAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.subjectexamtest.SubjectQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.classTest.createTest.ClassTestCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.classTest.WordDocumentDowloadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.classTest.ClassTestExamListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.classTest.ClassTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.question.QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamClassManagement.classExam.examclassdetail.ExamClassDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamClassManagement.classExam.examclass.ExamClassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.chapter.ChapterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamManagement.subject.SubjectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.ExamsOffline.imagescoring.UploadImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Teacher.TeacherMainActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".SignIn.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignIn.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.multiplechoiceexam.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource" />
+        </provider>
+    </application>
+
+</manifest>

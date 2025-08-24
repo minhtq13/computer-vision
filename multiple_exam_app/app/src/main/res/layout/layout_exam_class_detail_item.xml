@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:elevation="5dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/student_exam_id"
+            android:layout_width="27dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Họ và tên : "
+            android:textColor="#090909"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@id/student_exam_id"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/student_exam_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Đỗ Quang Hùng"
+            android:textColor="#090909"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/textview1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textviewStudent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="8dp"
+            android:text="MSSV       :"
+            android:textColor="#090909"
+            android:textSize="17sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/student_exam_id"
+            app:layout_constraintTop_toBottomOf="@id/textview1" />
+        <TextView
+            android:id="@+id/textviewTeacher"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="invisible"
+            android:text="Số hiệu     :"
+            android:textColor="#090909"
+            android:textSize="17sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/student_exam_id"
+            app:layout_constraintTop_toBottomOf="@id/textview1" />
+        <TextView
+            android:id="@+id/student_exam_mssv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="8dp"
+            android:text="20192882"
+            android:textColor="#090909"
+            android:textSize="17sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textviewStudent"
+            app:layout_constraintTop_toBottomOf="@id/textview1" />
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Mã phòng:"
+            android:textColor="#111212"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textviewStudent"
+            app:layout_constraintTop_toBottomOf="@+id/student_exam_mssv"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/student_exam_date_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="14-05"
+            android:textColor="#111212"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textview3"
+            app:layout_constraintTop_toBottomOf="@+id/student_exam_mssv"
+            app:layout_constraintVertical_bias="0.017" />
+
+        <TextView
+            android:id="@+id/textviewTeacherTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Mã đề       :"
+            android:textColor="#1B1A1A"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textview3"
+            app:layout_constraintTop_toBottomOf="@+id/textview3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/student_exam_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text=""
+            android:textColor="#121111"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textview3"
+            app:layout_constraintTop_toBottomOf="@+id/student_exam_mssv" />
+
+        <TextView
+            android:id="@+id/textviewTeacherGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Điểm         :"
+            android:textColor="#EF0707"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textviewTeacherTest"
+            app:layout_constraintTop_toBottomOf="@+id/textviewTeacherTest"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/student_exam_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Không có bài"
+            android:textColor="#EF0707"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textview3"
+            app:layout_constraintTop_toBottomOf="@+id/student_exam_mssv"
+            app:layout_constraintVertical_bias="0.982" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/class_code"-->
+        <!--            android:layout_width="1dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_marginBottom="8dp"-->
+        <!--            android:fontFamily="@font/aladin"-->
+        <!--            android:text="Detail"-->
+        <!--            android:textColor="#0E0E0E"-->
+        <!--            android:textSize="13sp"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/class_semester"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/class_semester" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/class_detail"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:fontFamily="@font/aladin"-->
+        <!--            android:text="Detail"-->
+        <!--            android:textColor="#801E1E"-->
+        <!--            android:textSize="13sp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/class_semester"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/class_semester" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/class_text_download"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="276dp"-->
+        <!--            android:layout_marginTop="4dp"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:fontFamily="@font/aladin"-->
+        <!--            android:text="Download"-->
+        <!--            android:textColor="#EC0D0D"-->
+        <!--            android:textSize="13sp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/class_code"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/class_code" />-->
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/class_dowload"-->
+        <!--            android:layout_width="15dp"-->
+        <!--            android:layout_height="15dp"-->
+        <!--            android:layout_marginBottom="12dp"-->
+        <!--            android:background="@drawable/baseline_file_download_24"-->
+        <!--            android:fontFamily="@font/aladin"-->
+        <!--            android:textColor="#B8C0C9"-->
+        <!--            android:textSize="13sp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.111"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/class_text_download" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

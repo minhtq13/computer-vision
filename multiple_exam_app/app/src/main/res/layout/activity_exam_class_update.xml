@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/normalPadding"
+    tools:context=".Teacher.ExamClassManagement.classExam.examclass.ExamClassUpdateActivity">
+
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Câp nhật thi mới"
+        android:textColor="@color/red_light"
+        android:textSize="@dimen/all_text_size_24"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview_exam_class_add_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageview_exam_class_add_exit" />
+
+    <ImageView
+        android:id="@+id/imageview_exam_class_add_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/all_padding_12"
+        android:src="@drawable/ic_arrowback_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Phòng thi"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:startIconDrawable="@drawable/ic_class_24"
+        app:startIconTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_class_room_name_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_gray"
+            android:inputType="text"
+            android:drawableEnd="@drawable/ic_expand_32"
+            android:drawablePadding="@dimen/all_padding_12"
+            android:textColorHint="#3F51B5"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Mã lớp thi"
+        android:visibility="gone"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:startIconDrawable="@drawable/ic_code_24"
+        app:startIconTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_class_code_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_gray"
+            android:textColorHint="#3F51B5"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Thời gian thi"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:startIconDrawable="@drawable/ic_semester_24"
+        app:startIconTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_class_semester_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_gray"
+            android:focusable="false"
+            android:inputType="text"
+            android:drawableEnd="@drawable/ic_expand_32"
+            android:drawablePadding="@dimen/all_padding_12"
+            android:textColorHint="#3F51B5"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:focusable="false"
+        android:hint="Bộ đề môn học"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+        app:startIconDrawable="@drawable/ic_subject_24"
+        app:startIconTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_class_test_id_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_gray"
+            android:focusable="false"
+            android:inputType="number"
+            android:drawableEnd="@drawable/ic_expand_32"
+            android:drawablePadding="@dimen/all_padding_12"
+            android:textColorHint="#3F51B5"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Thêm sinh viên tham gia thi"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+        app:startIconDrawable="@drawable/ic_students_feature"
+        app:startIconTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_class_student_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_gray"
+            android:focusable="false"
+            android:inputType="text"
+            android:drawableEnd="@drawable/ic_expand_32"
+            android:drawablePadding="@dimen/all_padding_12"
+            android:textColorHint="#3F51B5"
+            android:textSize="20sp"
+            app:errorEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Thêm giám thi tham gia"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+        app:startIconDrawable="@drawable/ic_students_feature"
+        app:startIconTint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_class_teacher_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext_gray"
+            android:focusable="false"
+            android:inputType="text"
+            android:drawableEnd="@drawable/ic_expand_32"
+            android:drawablePadding="@dimen/all_padding_12"
+            android:textColorHint="#3F51B5"
+            android:textSize="20sp"
+            app:errorEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_class_exam_save_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_background_green"
+        android:enabled="true"
+        android:text="Xác nhận"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+        app:layout_constraintVertical_bias="0.842" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

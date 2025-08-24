@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Trang chủ"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_home_24"
+        android:checked="true"
+        android:id="@+id/menuTeacher_ExamOffline"/>
+    <item android:title="Môn thi"
+        android:id="@+id/menuTeacher_Exam"
+        android:icon="@drawable/ic_note_alt_24"/>
+    <item android:title="Lớp thi"
+        app:showAsAction="never"
+        android:visible="false"
+        android:icon="@drawable/ic_class_24"
+        android:id="@+id/menuTeacher_ExamClass"/>
+    <item android:title="Tài khoản"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_account_circle_24"
+        android:id="@+id/menuTeacher_Profile"/>
+</menu>

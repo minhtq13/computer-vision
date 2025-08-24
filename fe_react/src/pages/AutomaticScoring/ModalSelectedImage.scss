@@ -1,0 +1,55 @@
+.modal-selected-image {
+  width: 55vw !important;
+  .ant-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ant-modal-title {
+      font-size: 20px;
+    }
+  }
+  .ant-modal-content {
+    height: 88vh !important;
+  }
+  .ant-modal-body {
+    height: 70vh !important;
+  }
+  .header-table-selected-image {
+    margin-bottom: 16px;
+    min-height: 50px;
+    .header-button {
+      margin-top: 20px;
+      justify-content: space-between;
+      display: flex;
+      margin-right: 24px;  
+      align-items: center;
+      button {
+        display: flex;
+        align-items: center;
+        padding: 0px 16px;
+      }
+    }
+  }
+  .ant-pagination {
+    margin: 24px 0 !important;
+  }
+  .ant-modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      min-width: 150px;
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media (min-width: 1600px) and (min-height: 830px)  { 
+  .table-select-image-in-folder {
+    .ant-table-body, .ant-table-tbody {
+      overflow-y: scroll !important;
+      max-height: 436px !important;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.ExamsOffline.teacher.TeacherSearchActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBarMenu_detailTeacher"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/img_bachkhoa_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Danh sách giảng viên"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_listTeacher_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_import_24"
+            android:padding="20dp"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextTeacher"
+        android:layout_margin="@dimen/all_margin_12"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_min_height"
+        android:background="@drawable/rounded_edittext"
+        android:drawableEnd="@drawable/baseline_search_24"
+        android:hint="Tra cứu giảng viên"
+        android:inputType="textPersonName"
+        android:padding="@dimen/all_padding_12"
+        app:layout_constraintTop_toBottomOf="@+id/topBarMenu_detailTeacher" />
+
+    <RadioGroup
+        android:id="@+id/operatorRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTeacher">
+
+        <RadioButton
+            android:id="@+id/search_mssv_teacher"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="70dp"
+            android:checked="true"
+            android:text="Mã học phần" />
+
+        <RadioButton
+            android:id="@+id/search_name_teacher"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Họ và tên" />
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_teacher"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/all_padding_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operatorRadioGroup"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_add_24"
+        android:visibility="gone"
+        app:backgroundTint="#F14646"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:useCompatPadding="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>

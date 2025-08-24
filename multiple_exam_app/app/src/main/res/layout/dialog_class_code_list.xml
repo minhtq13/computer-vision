@@ -1,0 +1,25 @@
+<!-- dialog_semester_list.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewDialogTitleExamClassCode"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:text="Lớp thi"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewExamClassCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/all_padding_12"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

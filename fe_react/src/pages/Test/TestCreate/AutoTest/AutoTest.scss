@@ -1,0 +1,85 @@
+.test-create-header {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--hust-color);
+  padding: 20px 0px;
+}
+
+
+.test-create-view {
+
+  .semester-test {
+    .ant-select {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .ant-form {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .ant-form-item {
+      width: 46%;
+    }
+
+    .ant-form-item-explain-error {
+      width: 350px;
+    }
+
+    .ant-form-item-row {
+      display: flex;
+
+      .ant-form-item-label {
+        width: 33%;
+        justify-content: flex-start;
+        display: flex;
+        flex-shrink: 0;
+
+        label {
+          flex-shrink: 0;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: "Poppins", sans-serif;
+        }
+      }
+    }
+
+    .ant-picker {
+      width: 100%;
+    }
+
+    .btn-create {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .ant-btn {
+      span {
+        font-size: 20px;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.test-set-create-modal {
+  height: 180px;
+
+  .ant-modal-content {
+    height: 180px;
+
+    .ant-modal-body {
+      height: 60px;
+    }
+  }
+}
+.number-q {
+  color: var(--add-color)
+}

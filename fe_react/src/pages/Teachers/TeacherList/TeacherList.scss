@@ -1,0 +1,90 @@
+.teacher-list {
+  .header-teacher-list {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    p {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--hust-color);
+    }
+
+  }
+
+  .search-filter-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .block-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .options {
+      color: var(--hust-color);
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      gap: 6px;
+    }
+  }
+  .ant-table-body {
+    min-height: 396px;
+  }
+
+  .teacher-list-table {
+    border: 1px solid #ccc;
+    padding: 12px;
+    width: 100%;
+
+    .ant-table-content {
+      min-height: 500px;
+    }
+
+    .ant-pagination-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-table-pagination.ant-pagination {
+      margin: 12px 0;
+    }
+  }
+
+  .teacher-list-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .filter-time {
+      .sort-title {
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+  input[type="file"]::file-selector-button {
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #8c1515;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em !important;
+    background-color: #8c1515;
+    transition: 1s;
+    padding: 3px 10px;
+  }
+}
+#input-import-teacher {
+  border: 1px dashed #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+}

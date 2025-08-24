@@ -1,0 +1,91 @@
+.test-create {
+  .test-subject-chapters {
+    display: flex;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .list-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .list-search-filter-label {
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .ant-input-wrapper {
+        input {
+          width: 220px !important;
+        }
+      }
+    }
+
+    .test-chapters,
+    .test-subject {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 35%;
+
+      .ant-select {
+        width: 80%;
+      }
+
+      .ant-select-selector {
+        max-height: 60px;
+        overflow-y: scroll;
+      }
+    }
+
+    .test-allowed-using-documents {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 20%;
+
+      .ant-select-selector {
+        min-width: 96px;
+        max-width: 96px;
+        overflow-y: scroll;
+      }
+    }
+
+    .test-level {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 20%;
+
+      .ant-select {
+        width: 50%;
+      }
+    }
+
+    .select-label {
+      font-weight: bold;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+  }
+
+  .test-content {
+    margin-top: 20px;
+  }
+}
+
+.question-config-info {
+  display: flex;
+  gap: 15px;
+
+  span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

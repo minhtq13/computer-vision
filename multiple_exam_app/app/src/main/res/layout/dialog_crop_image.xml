@@ -1,0 +1,20 @@
+<!-- dialog_crop_image.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <me.pqpo.smartcropperlib.view.CropImageView
+        android:id="@+id/iv_crop_cc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+    android:layout_weight="1"  />
+
+    <Button
+        android:id="@+id/btnCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crop"
+      />
+</LinearLayout>

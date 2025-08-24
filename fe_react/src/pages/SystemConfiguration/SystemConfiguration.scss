@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+.system-config-container {
+  .header-system-config {
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    p {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--hust-color);
+    }
+  }
+
+  .config-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 4px;
+    min-height: 10vh;
+
+    .config-item {
+      padding: 10px;
+      display: flex;
+      gap: 1vw;
+      color: var(--hust-color);
+
+      p {
+        font-weight: bold;
+        font-size: 12pt;
+      }
+    }
+  }
+}

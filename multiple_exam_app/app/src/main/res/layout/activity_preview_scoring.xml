@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.ExamsOffline.imagescoring.PreviewScoringActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBarMenu_scoring"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView_scoring_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/all_margin_6"
+            android:padding="@dimen/all_padding_12"
+            android:src="@drawable/ic_arrowback_24"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/img_bachkhoa_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Chấm bài thi"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/all_margin_18"
+        android:gravity="center"
+        android:text="Vui lòng chụp ảnh bài thi từ camera hoặc thêm từ album ảnh để chấm điểm"
+        android:textSize="@dimen/all_text_size_24"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="@dimen/all_padding_12"
+        app:layout_constraintBottom_toTopOf="@+id/txt_subject_test_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_semester_test_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_scoring"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="@dimen/all_padding_12"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/txt_subject_test_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_semester_test_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_scoring_no_db"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:padding="@dimen/all_padding_12"
+        app:layout_constraintBottom_toTopOf="@+id/txt_subject_test_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_semester_test_search" />
+    <EditText
+        android:id="@+id/txt_semester_test_search"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_semester_24"
+        android:drawablePadding="@dimen/all_padding_12"
+        android:hint="Học Kì"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/all_padding_12"
+        android:textSize="20sp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBarMenu_scoring" />
+
+    <TextView
+        android:id="@+id/imageCount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Số lượng"
+        android:textColor="@color/color_btn"
+        android:textSize="18dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_semester_test_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_semester_test_search" />
+
+
+    <EditText
+        android:id="@+id/txt_subject_test_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/rounded_edittext_gray"
+        android:drawableStart="@drawable/ic_subject_24"
+        android:drawablePadding="@dimen/all_padding_12"
+        android:focusable="false"
+        android:drawableTint="@color/black"
+        android:hint="Học phần"
+        android:padding="@dimen/all_padding_12"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextScoring"
+        app:layout_constraintEnd_toEndOf="@+id/btn_scoring"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextScoring" />
+
+    <EditText
+        android:id="@+id/editTextScoring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:focusable="false"
+        android:background="@drawable/rounded_edittext_gray"
+        android:drawableStart="@drawable/ic_code_24"
+        android:drawablePadding="@dimen/all_padding_12"
+        android:inputType="text"
+        android:padding="@dimen/all_padding_12"
+        android:hint="Mã lớp thi"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/pickImageFromDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:elevation="@dimen/all_elevation_6"
+        android:src="@drawable/ic_camera_alt_24"
+        app:backgroundTint="@color/color_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextScoring"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_subject_test_search"
+        app:tint="@color/white" />
+
+    <Button
+        android:id="@+id/btn_scoring"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/color_btn"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Chấm"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/all_text_size_18"
+        app:layout_constraintEnd_toStartOf="@+id/pickImageFromDevice"
+        app:layout_constraintStart_toEndOf="@+id/editTextScoring"
+        app:layout_constraintTop_toBottomOf="@+id/txt_subject_test_search" />
+
+
+    <Button
+        android:id="@+id/btn_save_scoring"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="#3EEA52"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Lưa kết quả"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/all_text_size_18"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/pickImageFromDevice"
+        app:layout_constraintStart_toEndOf="@+id/editTextScoring"
+        app:layout_constraintTop_toBottomOf="@+id/txt_subject_test_search" />
+</androidx.constraintlayout.widget.ConstraintLayout>

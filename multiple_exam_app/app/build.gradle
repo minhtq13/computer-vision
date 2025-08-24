@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.multiplechoiceexam'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.multiplechoiceexam"
+        minSdk 29
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/libs']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+//        debug {
+//            debuggable false
+//        }
+    }
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.camera:camera-lifecycle:1.0.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    // OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.6.0'
+
+    // Retrofit OkHttp
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    //Scanner Crop
+    implementation "com.theartofdev.edmodo:android-image-cropper:2.8.0"
+
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+
+    implementation 'com.github.pqpo:SmartCropper:v2.1.4'
+
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    implementation 'org.jsoup:jsoup:1.14.3'
+
+
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    // navigation
+    def nav_version = "2.5.3"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.21"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21"
+
+    implementation 'com.github.mreram:showcaseview:1.4.1'
+}

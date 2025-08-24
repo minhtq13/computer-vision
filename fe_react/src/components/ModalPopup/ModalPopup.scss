@@ -1,0 +1,53 @@
+.modal-popup-component {
+  
+  .ant-modal-content {
+    width: 800px !important;
+    height: 388px !important;
+    align-items: center !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px !important;
+  }
+
+  .ant-modal-footer {
+    height: 64px !important;
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .ant-modal-header {
+    border-radius: 6px !important;
+    height: 64px !important;
+    background: #fff;
+  }
+
+  .ant-modal-title {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+  }
+
+  .ant-modal-body {
+    padding: 26px 0px;
+    text-align: center;
+  }
+
+  .modal-popup-content {
+    p {
+      font-size: 20px;
+    }
+    .icon {
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
+}

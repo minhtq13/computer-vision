@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/all_padding_12"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/questionTextOffline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Câu hỏi"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:id="@+id/checkBoxGroupOffline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/questionTextOffline"
+        android:layout_marginTop="8dp"
+        android:padding="16dp">
+    </LinearLayout>
+<!--    <RadioGroup-->
+<!--        android:id="@+id/radioGroupOffline"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/questionTextOffline"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:padding="16dp">-->
+
+<!--    </RadioGroup>-->
+
+    <Button
+        android:id="@+id/submitButtonOffline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background_green"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/checkBoxGroupOffline"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="@dimen/all_padding_12"
+        android:paddingStart="@dimen/all_padding_12"
+        android:drawableEnd="@drawable/ic_navigate_next_24"
+        android:drawableTint="@color/white"
+        android:text="Tiếp" />
+
+</RelativeLayout>

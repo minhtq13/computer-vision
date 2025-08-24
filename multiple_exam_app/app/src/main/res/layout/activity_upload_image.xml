@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/normalPadding"
+    tools:context=".Teacher.ExamsOffline.imagescoring.UploadImageActivity">
+
+
+    <Button
+        android:id="@+id/pickImage"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_background_red"
+        android:text="Chọn ảnh"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/color_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/scannedImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <!-- other attributes -->
+    />
+    <TextView
+        android:id="@+id/imageCount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:text="Số lượng"
+        android:textColor="@color/color_btn"
+        android:textSize="18dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/pickImage"
+        android:layout_below="@id/imageCount_tv"
+        android:layout_marginBottom="16dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/pickImage"
+        app:layout_constraintTop_toBottomOf="@+id/imageCount_tv"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="12dp" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:src="@drawable/ic_done_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <EditText
+        android:id="@+id/classCode_edt"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@id/upload_img"
+        android:background="@drawable/border_edt_bg"
+        android:hint="Enter ClassCode"
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/upload_img"
+        app:layout_constraintStart_toEndOf="@+id/pickImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

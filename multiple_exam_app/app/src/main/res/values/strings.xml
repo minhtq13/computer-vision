@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HUSTAssistantWise</string>
+    <string name="forget_password_tv"><u>Quên mật khẩu</u></string>
+    <string name="create_your_account_tv"><u>Tạo tài khoản mới</u></string>
+    <string name="sign_in_tv"><u>Sign In</u></string>
+    <string name="title_signIn">Welcome to \n HUSTAssistantWise</string>
+    <string name="title_activity_menu_teacher_drawer">MenuTeacherDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="upload_image"><b>Upload Image</b></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

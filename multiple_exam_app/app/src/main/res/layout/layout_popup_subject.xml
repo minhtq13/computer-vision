@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm học phần"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textFontWeight="500"
+        android:textSize="30sp"
+        android:padding="20dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Tên học phần"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/ic_subject_24"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Mã học phần"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/ic_code_24"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextCode"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Mô tả"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/ic_description_24"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Số tín chỉ"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/ic_credits_24"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextCredit"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Phòng ban"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/ic_credits_24"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextDepartment"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Xác nhận"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:background="@drawable/button_background_green"
+        android:id="@+id/confirmButton" />
+
+</LinearLayout>
+
+
+

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher.ExamsOffline.student.StudentActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/topBarMenu_listStudent"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView_student_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/all_margin_6"
+            android:padding="@dimen/all_padding_12"
+            android:src="@drawable/ic_arrowback_24"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Danh sách sinh viên"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_listStudent_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_import_24"
+            android:backgroundTint="@color/white"
+            android:padding="20dp"
+            app:tint="@color/white" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextStudent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_min_height"
+        android:layout_margin="@dimen/all_margin_12"
+        android:background="@drawable/rounded_edittext_gray"
+        android:drawableEnd="@drawable/ic_search_24"
+        android:hint="Tra cứu sinh viên"
+        android:inputType="textPersonName"
+        android:padding="@dimen/all_padding_12"
+        app:layout_constraintTop_toBottomOf="@+id/topBarMenu_listStudent"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+    <RadioGroup
+        android:id="@+id/operatorRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextStudent">
+
+        <RadioButton
+            android:id="@+id/search_mssv"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="MSSV" />
+
+        <RadioButton
+            android:id="@+id/search_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Họ và tên" />
+
+        <RadioButton
+            android:id="@+id/search_course"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Khóa" />
+    </RadioGroup>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_student"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/all_margin_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operatorRadioGroup" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_24"
+        android:visibility="gone"
+        app:backgroundTint="#F14646"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:useCompatPadding="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

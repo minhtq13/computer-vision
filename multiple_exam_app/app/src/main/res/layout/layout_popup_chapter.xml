@@ -1,0 +1,104 @@
+<!-- chapter_edit_popup.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_background_white"
+    android:backgroundTint="#EEEEEE"
+    android:padding="@dimen/all_padding_12"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:padding="20dp"
+        android:text="Chỉnh sửa chương"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Chương"
+        app:hintTextColor="@color/black"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextTitleChapter"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Chương số"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextOrderChapter"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:backgroundTint="@color/white"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Mô tả"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:hintTextColor="@color/black"
+        app:startIconTint="@color/black">
+
+        <EditText
+            android:id="@+id/editTextDescriptionUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_edittext_gray"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:backgroundTint="@color/white"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background_green"
+        android:paddingLeft="50dp"
+        android:paddingTop="20dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="20dp"
+        android:text="Lưu"
+        android:textColor="@color/white" />
+
+</LinearLayout>
+

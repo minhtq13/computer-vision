@@ -1,0 +1,28 @@
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  webserver-gw:
+    container_name: elearning_support_webserver_gw
+    image: leopepe2012/elearning_support_system:webserver-gw
+    restart: always
+    privileged: true
+    user: root
+    environment:
+      - "TZ=Asia/Ho_Chi_Minh"
+      - "ENABLED_APP=react"
+    networks:
+      - e_learning_support
+    volumes:
+      - webserver-logs:/var/log/nginx/
+    ports:
+      - "443:443"
+    expose:
+      - 443
+      - 80
+volumes:
+  webserver-logs:
+    name: els_webserver_logs
+    driver: local

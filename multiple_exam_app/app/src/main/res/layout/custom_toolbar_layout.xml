@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topBarMenu"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/color_btn">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/img_bachkhoa_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/all_margin_24"
+        android:text="HUSTAssistantWise"
+        android:textColor="@color/white"
+        android:textSize="@dimen/all_text_size_24"
+        android:textStyle="bold" />
+</RelativeLayout>

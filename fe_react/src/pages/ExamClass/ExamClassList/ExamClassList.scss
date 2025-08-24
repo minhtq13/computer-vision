@@ -1,0 +1,138 @@
+.exam-class-list {
+  .header-exam-class-list {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    p {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--hust-color);
+    }
+  }
+
+  .search-filter-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .block-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .options {
+      color: var(--hust-color);
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      gap: 6px;
+    }
+  }
+
+  .examclass-subject-semester {
+    display: flex;
+    gap: 20px;
+
+    .examclass-select-semester {
+      .ant-select {
+        width: 100px;
+      }
+    }
+
+    .examclass-select-subject {
+      .ant-select {
+        width: 300px;
+      }
+    }
+  }
+
+  .select-label {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+
+  .exam-class-list-table {
+    border: 1px solid #ccc;
+    padding: 12px;
+
+    .ant-table-body {
+      min-height: 396px;
+    }
+
+    .ant-table-content {
+      min-height: 500px;
+    }
+
+    .ant-pagination-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-table-pagination.ant-pagination {
+      margin: 12px 0;
+    }
+  }
+}
+
+.tab-button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .ant-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  #student-file {
+    padding: 4px 11px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    border-width: 1px;
+  }
+
+}
+
+
+.exam-class-participants {
+  min-width: 70vw;
+  height: 90vh;
+
+  .ant-table-body {
+    min-height: 235px;
+  }
+
+  .ant-modal-content {
+    height: 93vh;
+
+    .ant-modal-body {
+      height: 76vh;
+    }
+  }
+  .ant-modal-footer {
+    margin-top: 3vh;
+  }
+
+  .ant-table {
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+}
+
+.exam-class-info-details {
+  display: flex;
+  gap: 100px;
+  margin: 5px 0px;
+
+  div {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}

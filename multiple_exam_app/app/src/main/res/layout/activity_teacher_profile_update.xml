@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/normalPadding"
+    android:orientation="vertical"
+    tools:context=".Teacher.ProfileUser.teacher.TeacherProfileUpdateActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cập nhât thông tin"
+        android:textColor="@color/red_light"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toEndOf="@+id/student_update_exit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/student_update_exit"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_arrowback_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="13dp"
+        app:layout_constraintTop_toBottomOf="@+id/student_update_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical">
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Họ và tên"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+                    app:startIconTint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_teacher_profile_update_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext_white"
+                        android:inputType="text"
+                        android:textColorHint="#3F51B5"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <RadioGroup
+                    android:id="@+id/operatorRadioGroupGenderUpdateProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextStudent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Giới tính:         "
+                        android:textSize="20dp" />
+
+                    <RadioButton
+                        android:id="@+id/gender_nam"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nam"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/gender_nu"
+                        android:layout_marginStart="20dp"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nữ" />
+                </RadioGroup>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Gmail cá nhân"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:startIconDrawable="@drawable/ic_email_24"
+                    app:startIconTint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_teacher_profile_update_gmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext_white"
+                        android:inputType="text"
+                        android:textColorHint="#3F51B5"
+                        android:textSize="20sp"
+                        app:errorEnabled="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Ngày sinh"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:startIconDrawable="@drawable/ic_calendar_24"
+                    app:startIconTint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_teacher_profile_update_birthday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext_white"
+                        android:inputType="numberDecimal"
+                        android:focusable="false"
+                        android:textColorHint="#3F51B5"
+                        android:textSize="20sp"
+                        app:errorEnabled="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Số điện thoại"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:startIconDrawable="@drawable/ic_phone_24"
+                    app:startIconTint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_teacher_profile_update_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext_white"
+                        android:inputType="number"
+                        android:textColorHint="#3F51B5"
+                        android:textSize="20sp"
+                        app:errorEnabled="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_teacher_profile_update_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background_green"
+                android:textColor="@color/white"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:enabled="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:textAllCaps="false"
+                android:text="Xác nhận"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

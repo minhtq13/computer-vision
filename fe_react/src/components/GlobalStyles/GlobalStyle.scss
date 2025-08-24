@@ -1,0 +1,166 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+
+:root {
+  // Layout
+  --margin-top-content: 75px;
+  --padding-bottom-content: 50px;
+  --height-header: 60px;
+  --height-footer: 128px;
+  --width-sidebar-collapse: 128px;
+  --width-sidebar: 256px;
+  // color
+  --hust-color: #8c1515;
+  --add-color: #03787c;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html *::-webkit-scrollbar {
+  border-radius: 0 !important;
+  width: 8px !important;
+  cursor: pointer !important;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  cursor: pointer !important;
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0 !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  cursor: pointer !important;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow: overlay;
+  background-color: #f8f8f8;
+  color: rgb(90, 86, 86);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 22px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+// fix empty right space react-slick
+.slick-next {
+  right: 10px !important;
+  z-index: 1000 !important;
+}
+
+.slick-prev {
+  left: 10px !important;
+  z-index: 1000 !important;
+}
+
+// icon close not css focus
+.ant-modal-close {
+  outline: none !important;
+  border: none !important;
+}
+
+// font-weight
+.text-bold {
+  font-weight: 500;
+}
+
+a {
+  color: rgb(90, 86, 86);
+}
+
+.foo {
+  margin: 0px;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f5f5f5 !important;
+  font-weight: 500 !important;
+}
+
+.btn-info:active {
+  background-color: #ffffff !important;
+}
+
+.ant-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+
+  .ant-modal-title {
+    font-size: 20px;
+  }
+}
+
+.ant-modal-footer {
+  button {
+    min-width: 100px;
+  }
+}
+
+.ant-select-selector {
+  cursor: pointer !important;
+}
+input[type="file"]::file-selector-button {
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid #8c1515;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em !important;
+  background-color: #8c1515;
+  transition: 1s;
+  padding: 3px 10px;
+}
+#input-import-dslt {
+  border: 1px dashed #ccc;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.go-to-top-button {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 1000;
+  background-color: #ecd7d7;
+  border-radius: 100px;
+  padding: 12px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ddc7c7;
+    transition: linear 0.25s;
+    .go-to-top-icon {
+      svg {
+        color: #a01f1f;
+      }
+    }
+  }
+  .go-to-top-icon {
+    svg {
+      font-size: 40px;
+      color: #8c1515;
+    }
+  }
+}
+
+.ql-editor {
+  p {
+    line-height: 1.3 !important;
+  }
+}

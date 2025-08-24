@@ -1,0 +1,24 @@
+# docker compose -f .\docker-compose-local.yml up -d (detached mode)
+version: '3.7'
+networks:
+  e_learning_support:
+    name: elearning_support_network
+    external: true
+services:
+  fe_react-app:
+    container_name: elearning_support_fe_react
+    image: leopepe2012/elearning_support_system:fe-react
+    restart: always
+    privileged: true
+    user: root
+    environment:
+      - "NODE_ENV=production"
+      - "TZ=Asia/Ho_Chi_Minh"
+    networks:
+      - e_learning_support
+    volumes:
+      - /usr/local:/usr/local
+#    ports:
+#      - "3001:80"
+    expose:
+      - 80

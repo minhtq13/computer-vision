@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:elevation="5dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/class_id"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="8dp"
+            android:text="Room name"
+            android:textColor="#090909"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/class_id"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/disable_class_room"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/class_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Mon hoc"
+            android:textColor="#151515"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/class_name"
+            app:layout_constraintTop_toBottomOf="@+id/class_name"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/class_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Mã lớp"
+            android:textColor="#151515"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/class_subject"
+            app:layout_constraintTop_toBottomOf="@+id/class_subject"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/class_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="Ngày thi"
+            android:textColor="#151515"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/class_code"
+            app:layout_constraintTop_toBottomOf="@+id/class_code"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/class_under"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="-"
+            android:textColor="#B8C0C9"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/class_date"
+            app:layout_constraintTop_toBottomOf="@+id/class_code"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/class_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="Ngày thi"
+            android:textColor="#151515"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/class_under"
+            app:layout_constraintTop_toBottomOf="@+id/class_code"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/class_semester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="semester"
+            android:textColor="#B8C0C9"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/class_date"
+            app:layout_constraintTop_toBottomOf="@+id/class_date"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/class_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Cập nhật"
+            android:textColor="#801E1E"
+            android:layout_marginBottom="10dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/class_semester"
+            app:layout_constraintTop_toBottomOf="@+id/class_semester" />
+
+        <TextView
+            android:id="@+id/class_text_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:text="Download"
+            android:textColor="#EC0D0D"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/class_update"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/class_download"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/baseline_file_download_24"
+            android:textColor="#B8C0C9"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toEndOf="@+id/class_text_download" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

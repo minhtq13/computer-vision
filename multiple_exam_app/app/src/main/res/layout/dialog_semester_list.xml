@@ -1,0 +1,33 @@
+<!-- dialog_semester_list.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Học kì"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSemesters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="12dp" />
+
+    <ImageButton
+        android:id="@+id/buttonCloseDialog"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/color_btn"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/all_margin_12"
+        android:background="@drawable/ic_x_24"
+        android:text="Đóng" />
+</LinearLayout>

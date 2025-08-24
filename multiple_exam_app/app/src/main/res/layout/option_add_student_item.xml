@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding = "10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/red_light"
+        android:textStyle="bold"
+        android:text="Lựa chọn"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/add_student_dialog"
+                android:layout_width="70dp"
+                android:clickable="true"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_students_feature"
+                android:focusable="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Thêm sinh viên"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/import_student_add"
+                android:clickable="true"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_teacher_feature"
+                android:focusable="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Thêm giám thị"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginEnd="20dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/teal_200"
+        android:textStyle="bold"
+        android:text="Hủy"/>
+
+</LinearLayout>

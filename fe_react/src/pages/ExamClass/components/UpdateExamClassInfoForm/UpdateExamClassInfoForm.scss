@@ -1,0 +1,254 @@
+.exam-class-info {
+  .info-header {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--hust-color);
+    padding: 20px 0px;
+  }
+
+  .ant-select-selection-overflow {
+    max-height: 150px;
+    overflow-y: scroll;
+  }
+
+  .exam-class-students,
+  .exam-class-teachers {
+    .ant-select-selector {
+      padding-inline-end: 2px !important;
+    }
+  }
+}
+
+.info-exam-class-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 30px;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 20px;
+
+  .info-exam-class-header {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--hust-color);
+  }
+
+  .ant-select-multiple {
+    .ant-select-selection-overflow {
+      padding-top: 10px;
+    }
+
+    .ant-select-selection-item {
+      position: static !important;
+    }
+
+    .ant-select-selection-placeholder {
+      position: absolute;
+      top: 22px !important;
+    }
+  }
+
+  .exam-class-students,
+  .exam-class-teachers {
+    .ant-select-selector {
+      height: auto !important;
+    }
+  }
+
+  .ant-form-item {
+    width: 45%;
+    margin-bottom: 40px;
+
+    .ant-picker {
+      width: 100%;
+      height: 45px;
+    }
+
+    .ant-select-selector {
+      height: 45px;
+      position: relative;
+
+      .ant-select-selection-item,
+      .ant-select-selection-placeholder {
+        position: absolute;
+        top: 6px;
+      }
+    }
+
+    .test-select {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .ant-row {
+      position: relative;
+      display: block;
+    }
+
+    .ant-input {
+      height: 45px;
+      padding-left: 18px;
+    }
+
+    .ant-input-password {
+      height: 45px;
+    }
+
+    .ant-form-item-required::after {
+      content: "*" !important;
+      color: #ff4d4f;
+    }
+
+    label::before {
+      content: "" !important;
+    }
+
+    #info-exam-class-form_password {
+      height: 35px !important;
+    }
+
+    .ant-form-item-label {
+      position: absolute;
+      top: -15px;
+      z-index: 999;
+      left: 15px;
+      background-color: #fff;
+      height: 25px;
+
+      label {
+        height: 20px;
+        margin: 0px;
+      }
+    }
+  }
+
+  .btn-info {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .btn-info:active {
+    background-color: #ffffff;
+  }
+}
+
+.test-set-no-examclass,
+.test-set-item-examclass {
+  button {
+    background-color: var(--hust-color);
+    color: #fff;
+  }
+  button:hover {
+    background-color: var(--hust-color);
+    color: #fff !important;
+  }
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.test-set-no-label {
+  font-weight: bold;
+}
+
+.exam-class-modal {
+  min-width: 60vw;
+  height: 80vh;
+
+  .ant-modal-content {
+    height: 92vh;
+  }
+}
+
+.selected-number-text {
+  color: var(--hust-color);
+  text-align: right;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.modal-preview-test {
+  width: 60vw !important;
+  .ant-modal-content {
+    width: 60vw;
+    height: 90vh;
+  }
+  .ant-modal-body {
+    height: 79vh;
+  }
+
+  .test-preview {
+    overflow: auto;
+    height: 79vh;
+  }
+}
+
+.filter-student-options-exam-class-modal,
+.filter-teacher-options-exam-class-modal {
+  min-height: 70px;
+  margin: 12px 0px;
+}
+.preview-test-modal {
+  min-width: 60vw;
+  height: 80vh;
+  .test-preview {
+    overflow: auto;
+    height: 75vh;
+  }
+  .ant-modal-content {
+    height: 86vh;
+  }
+}
+.teacher-exam-class-table,
+.student-exam-class-table {
+  margin-top: 20px !important;
+  .ant-table-body{
+    min-height: 320px;
+  }
+}
+.test-list-exam-class-table {
+  .ant-table-body {
+    min-height: 408px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .preview-test-modal {
+    .test-preview {
+      overflow: auto;
+      height: 77vh !important;
+    }
+  }
+  .exam-class-modal {
+    .ant-modal-content {
+      height: 80vh;
+      padding: 32px;
+    }
+  }
+
+  .teacher-exam-class-table,
+  .student-exam-class-table {
+    .ant-table-body,
+    .ant-table-tbody {
+      overflow-y: scroll !important;
+      max-height: 436px !important;
+      min-height: 436px !important;
+    }
+  }
+
+}

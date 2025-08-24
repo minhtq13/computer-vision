@@ -1,0 +1,139 @@
+.test-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+
+  .ant-btn {
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .guide-text {
+    font-weight: bold;
+    font-size: 16px;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 10px;
+  }
+}
+
+.test-wrap {
+  background-color: #ffffff;
+  padding: 0px 0px 20px 20px;
+  margin-bottom: 30px;
+  overflow-y: scroll;
+  width: 100%;
+  position: relative;
+
+  .question-items {
+    margin-bottom: 15px;
+
+    .ql-container {
+      border: none;
+
+      img {
+        max-width: 300px !important;
+        object-fit: contain;
+      }
+    }
+
+    .ql-editor {
+      padding: 0px;
+      border: none;
+    }
+
+    .topic-level {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .question-topic {
+      margin-bottom: 5px;
+      align-items: flex-start;
+      font-size: 16px;
+      display: flex;
+      gap: 5px;
+
+      .question-number {
+        flex-shrink: 0;
+        font-weight: bold;
+      }
+    }
+
+    .answer-items {
+      font-size: 16px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .corrected {
+      font-weight: bold;
+    }
+  }
+
+
+  .number-ques {
+    position: sticky;
+    top: 0px;
+    padding-left: 72%;
+    font-weight: bold;
+    color: var(--add-color);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    background-color: #fff;
+    padding-top: 10px;
+
+    .number-ques-item {
+      font-size: 16px;
+    }
+  }
+
+  .ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    .ant-checkbox-wrapper {
+      display: flex;
+
+      .ant-checkbox {
+        display: block;
+        align-self: flex-start;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .question-number {
+    position: sticky;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    color: var(--hust-color);
+  }
+}
+
+.test-set-create-modal {
+  height: 180px;
+
+  .ant-modal-content {
+    height: 180px;
+
+    .ant-modal-body {
+      height: 60px;
+    }
+  }
+}
+.question-select-all {
+  display: flex;
+  .select-all {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px;
+  }
+}

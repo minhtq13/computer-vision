@@ -1,0 +1,202 @@
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:elevation="5dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_scoring"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/image_handle"
+            android:layout_marginTop="5dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <!-- Header Row -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Họ và tên"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/scoring_name_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Đỗ Quang Hùng"
+                    android:textSize="17sp"
+                    android:textColor="#090909"
+                    android:gravity="center"/>
+                <!-- Add more header columns as needed -->
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="MSSV"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/scoring_mssv_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20192882"
+                    android:textSize="17sp"
+                    android:textColor="#090909"
+                    android:gravity="center"/>
+                <!-- Add more header columns as needed -->
+            </TableRow>
+
+            <!-- Data Rows -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Mã lớp thi"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/scoring_exam_class_test_code_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="124575"
+                    android:textSize="17sp"
+                    android:gravity="center"/>
+                <!-- Add more data columns as needed -->
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Mã đề thi"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/scoring_test_set_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="546"
+                    android:textSize="17sp"
+                    android:gravity="center"/>
+                <!-- Add more data columns as needed -->
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Tổng số câu"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/scoring_handle_scoring_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="60"
+                    android:textSize="17sp"
+                    android:gravity="center"/>
+                <!-- Add more data columns as needed -->
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Số câu khoanh"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/scoring_mark_answer_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="56"
+                    android:textSize="17sp"
+                    android:gravity="right"/>
+
+                <TextView
+                    android:id="@+id/total_ques_student"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="/60"
+                    android:textSize="17sp"
+                    android:gravity="left"/>
+                <!-- Add more data columns as needed -->
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Số câu đúng"
+                    android:textColor="#090909"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/scoring_correct_answer_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="30"
+                    android:textSize="17sp"
+                    android:gravity="center"/>
+                <!-- Add more data columns as needed -->
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/textview7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Điểm"
+                    android:textColor="#E80909"
+                    android:textSize="17sp" />
+                <TextView
+                    android:id="@+id/scoring_total_point_db"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/red_light"
+                    android:text="20192882"
+                    android:textSize="17sp"
+                    android:gravity="center"/>
+                <!-- Add more data columns as needed -->
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
