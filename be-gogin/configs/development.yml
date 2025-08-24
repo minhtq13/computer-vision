@@ -6,10 +6,6 @@ server:
 databases:
   postgres:
     master:
-      user: elearning_support_admin
-      password: BLXx4wOCP7YJ
-      host: ep-broad-cloud-455155.ap-southeast-1.aws.neon.tech
-      port: 5432
       database: elearning_support_db
       schema: elearning_support_dev
       maxIdleConnections: 10
